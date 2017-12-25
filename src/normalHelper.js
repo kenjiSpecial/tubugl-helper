@@ -46,7 +46,6 @@ export class NormalHelper extends EventEmitter {
 			this._vao.bind();
 		} else {
 			this._positionBuffer.bind().attribPointer(this._program);
-			// this._indexBuffer.bind();
 			this._normalBuffer.bind().attribPointer(this._program);
 		}
 

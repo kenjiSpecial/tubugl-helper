@@ -129,8 +129,8 @@ export default class App {
 
 	_makeCamera() {
 		this._camera = new PerspectiveCamera(window.innerWidth, window.innerHeight, 60, 1, 2000);
-		this._camera.theta = 0;
-		this._camera.phi = 0;
+		this._camera.theta = -Math.PI / 180 * 35;
+		this._camera.phi = Math.PI / 180 * 15;
 		this._camera.rad1 = 800;
 		this._camera.rad2 = 800;
 	}
