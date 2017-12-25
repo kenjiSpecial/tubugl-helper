@@ -13,7 +13,7 @@ npm install tubugl-helper
 To install it with yarn:
 
 ```sh
-npm install tubugl-helper
+yarn add tubugl-helper
 ```
 
 ## examples
