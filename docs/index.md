@@ -6,6 +6,3 @@
 ### [app00](./app01/index.html)
 
 [![](./app01/thumbnail.png)](./app01/index.html)
-
-
-
