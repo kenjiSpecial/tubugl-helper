@@ -7,7 +7,6 @@ const TweenLite = require('gsap/TweenLite');
 const Stats = require('stats.js');
 
 import { COLOR_BUFFER_BIT, DEPTH_BUFFER_BIT, DEPTH_TEST } from 'tubugl-constants';
-import { Box } from 'tubugl-3d-shape';
 import { PerspectiveCamera } from 'tubugl-camera';
 import { GridHelper, NormalHelper } from '../../index';
 import { RoundingCube } from 'tubugl-3d-shape/src/roundingCube';
