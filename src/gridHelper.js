@@ -1,7 +1,7 @@
 import { Plane } from 'tubugl-2d-shape';
 const chroma = require('chroma-js');
 import { Program, ArrayBuffer } from 'tubugl-core';
-import { LINES } from 'tubugl-core/node_modules/tubugl-constants';
+import { LINES } from 'tubugl-constants';
 import { mat4 } from 'gl-matrix';
 import { baseFragSrc, baseVertSrc, axisVertSrc } from './shaders/gridhelper.shader';
 
