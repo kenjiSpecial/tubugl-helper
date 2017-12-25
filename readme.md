@@ -4,6 +4,8 @@
 
 helper tool for tubugl
 
+## install
+
 To install it with npm:
 
 ```sh
