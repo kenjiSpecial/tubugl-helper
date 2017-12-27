@@ -2,7 +2,7 @@
 
 [![NPM version][npm-image]][npm-url] 
 
-helper tool for tubugl
+helper tool for [tubugl](https://github.com/kenjiSpecial/tubugl)
 
 ## install
 

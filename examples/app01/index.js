@@ -9,7 +9,7 @@ const Stats = require('stats.js');
 import { COLOR_BUFFER_BIT, DEPTH_BUFFER_BIT, DEPTH_TEST } from 'tubugl-constants';
 import { PerspectiveCamera } from 'tubugl-camera';
 import { GridHelper, NormalHelper } from '../../index';
-import { RoundingCube } from 'tubugl-3d-shape/src/roundingCube';
+import { ProceduralRoundingCube } from 'tubugl-3d-shape';
 
 export default class App {
 	constructor(params = {}) {
@@ -55,7 +55,7 @@ export default class App {
 			)
 			.lookAt([0, 0, 0]);
 
-		this._gridHelper.render(this._camera);
+		// this._gridHelper.render(this._camera);
 		this._roundingCube.render(this._camera);
 		this._normalHelper.render(this._camera);
 	}
@@ -118,9 +118,10 @@ export default class App {
 		this.gl.enable(DEPTH_TEST);
 	}
 	_makeBox() {
-		this._roundingCube = new RoundingCube(this.gl, 200, 200, 200, 50, 20, 20, 20, {
+		this._roundingCube = new ProceduralRoundingCube(this.gl, 300, 300, 300, 10, 10, 10, 10, {
 			isWire: false
 		});
+		this._roundingCube.position.y = 0;
 		this._roundingCube.posTheta = 0;
 		this._roundingCube.rotTheta = 0;
 	}
@@ -135,10 +136,10 @@ export default class App {
 
 	_makeCamera() {
 		this._camera = new PerspectiveCamera(window.innerWidth, window.innerHeight, 60, 1, 2000);
-		this._camera.theta = -0.15;
-		this._camera.phi = 0.15;
-		this._camera.rad1 = 800;
-		this._camera.rad2 = 800;
+		this._camera.theta = -0.45;
+		this._camera.phi = -0.3;
+		this._camera.rad1 = 600;
+		this._camera.rad2 = 600;
 	}
 
 	_addGui() {
