@@ -1,6 +1,6 @@
 {
   "name": "tubugl-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "helper for tubugl",
   "main": "index.js",
   "license": "MIT",
@@ -17,11 +17,11 @@
     "dat.gui": "https://github.com/dataarts/dat.gui.git",
     "gsap": "^1.20.3",
     "stats.js": "https://github.com/mrdoob/stats.js.git",
-    "tubugl-2d-shape": "https://github.com/kenjiSpecial/tubugl-2d-shape.git",
-    "tubugl-3d-shape": "https://github.com/kenjiSpecial/tubugl-3d-shape.git",
-    "tubugl-constants": "https://github.com/kenjiSpecial/tubugl-constants.git",
-    "tubugl-core": "https://github.com/kenjiSpecial/tubugl-core.git",
-    "tubugl-math": "https://github.com/kenjiSpecial/tubugl-math.git"
+    "tubugl-2d-shape": "^1.0.0",
+    "tubugl-3d-shape": "^1.0.0",
+    "tubugl-constants": "^1.0.3",
+    "tubugl-core": "^1.0.0",
+    "tubugl-math": "^1.1.6"
   },
   "devDependencies": {
     "minimist": "^1.2.0",
