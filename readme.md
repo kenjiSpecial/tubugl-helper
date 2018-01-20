@@ -66,3 +66,7 @@ https://kenjispecial.github.io/tubugl-helper/app01/index.html
 
 [npm-image]: https://img.shields.io/npm/v/tubugl-helper.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/tubugl-helper 
+
+# referrecens
+
+- [The Perspective and Orthographic Projection Matrix](https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/building-basic-perspective-projection-matrix)
