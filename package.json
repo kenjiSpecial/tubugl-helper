@@ -1,6 +1,6 @@
 {
   "name": "tubugl-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "helper for tubugl",
   "main": "index.js",
   "license": "MIT",
@@ -11,13 +11,10 @@
     "app01": "parcel examples/app01/index.html --no-hmr",
     "dist01": "parcel build examples/app01/index.html -d docs/app01 --public-url ./",
     "screenshot01": "node ./node/screenshot.js --dir=app01",
-    "docs" : "python -m SimpleHTTPServer 8000"
+    "docs": "python -m SimpleHTTPServer 8000"
   },
   "dependencies": {
     "chroma-js": "^1.3.5",
-    "dat.gui": "https://github.com/dataarts/dat.gui.git",
-    "gsap": "^1.20.3",
-    "stats.js": "https://github.com/mrdoob/stats.js.git",
     "tubugl-2d-shape": "^1.0.0",
     "tubugl-3d-shape": "^1.1.0",
     "tubugl-constants": "^1.0.3",
@@ -25,7 +22,9 @@
     "tubugl-math": "^1.1.6"
   },
   "devDependencies": {
+    "gsap": "^1.20.3",
     "minimist": "^1.2.0",
-    "puppeteer": "^0.13.0"
+    "puppeteer": "^0.13.0",
+    "stats.js": "mrdoob/stats.js"
   }
 }
