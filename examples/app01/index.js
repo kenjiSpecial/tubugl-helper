@@ -23,6 +23,7 @@ export default class App {
 		this._setClear();
 		this._makeBox();
 		this._makeGridHelper();
+		this._makeGridHelper();
 		this._makeNormalHelper();
 		this._makeCamera();
 
@@ -118,16 +119,14 @@ export default class App {
 		this.gl.enable(DEPTH_TEST);
 	}
 	_makeBox() {
-		this._roundingCube = new ProceduralRoundingCube(this.gl, 300, 300, 300, 10, 10, 10, 10, {
-			isWire: false
-		});
+		this._roundingCube = new ProceduralRoundingCube(this.gl, {}, 300, 300, 300, 10, 10, 10, 10);
 		this._roundingCube.position.y = 0;
 		this._roundingCube.posTheta = 0;
 		this._roundingCube.rotTheta = 0;
 	}
 
 	_makeGridHelper() {
-		this._gridHelper = new GridHelper(this.gl, 1000, 1000, 20, 20);
+		this._gridHelper = new GridHelper(this.gl, {}, 1000, 1000, 20, 20);
 	}
 
 	_makeNormalHelper() {

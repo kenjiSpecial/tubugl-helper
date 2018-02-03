@@ -116,16 +116,14 @@ export default class App {
 		this.gl.enable(DEPTH_TEST);
 	}
 	_makeBox() {
-		this._box = new Cube(this.gl, 200, 200, 200, 4, 5, 6, {
-			isWire: false
-		});
+		this._box = new Cube(this.gl, {}, 200, 200, 200, 4, 5, 6);
 		this._box.posTheta = 0;
 		this._box.rotTheta = 0;
 		this._box.position.y = 100;
 	}
 
 	_makeGridHelper() {
-		this._gridHelper = new GridHelper(this.gl, 1000, 1000, 20, 20);
+		this._gridHelper = new GridHelper(this.gl, {}, 1000, 1000, 20, 20);
 	}
 
 	_makeCamera() {

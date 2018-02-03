@@ -6,9 +6,9 @@ import { mat4 } from 'gl-matrix';
 import { baseFragSrc, baseVertSrc, axisVertSrc } from './shaders/gridhelper.shader';
 
 export class GridHelper extends Plane {
-	constructor(gl, width = 100, height = 100, segmentW = 1, segmentH = 1, params = {}) {
+	constructor(gl, params = {}, width = 100, height = 100, segmentW = 1, segmentH = 1) {
 		params.isWire = true;
-		super(gl, width, height, segmentW, segmentH, params);
+		super(gl, params, width, height, segmentW, segmentH);
 		this.visible = true;
 		this.rotation.x = Math.PI / 2;
 
