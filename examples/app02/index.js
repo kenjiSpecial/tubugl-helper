@@ -9,7 +9,7 @@ const Stats = require('stats.js');
 import { COLOR_BUFFER_BIT, DEPTH_BUFFER_BIT, DEPTH_TEST } from 'tubugl-constants';
 import { Cube } from 'tubugl-3d-shape';
 import { PerspectiveCamera } from 'tubugl-camera';
-import { GridHelper } from '../../index';
+import { GridHelper2 } from '../../index';
 
 export default class App {
 	constructor(params = {}) {
@@ -112,7 +112,7 @@ export default class App {
 
 	destroy() {}
 	_setClear() {
-		this.gl.clearColor(0.0, 0.0, 0.0, 1.0);
+		this.gl.clearColor(1.0, 1.0, 1.0, 1.0);
 		this.gl.enable(DEPTH_TEST);
 	}
 	_makeBox() {
@@ -123,7 +123,7 @@ export default class App {
 	}
 
 	_makeGridHelper() {
-		this._gridHelper = new GridHelper(this.gl, {}, 1000, 1000, 20, 20);
+		this._gridHelper = new GridHelper2(this.gl, {}, 1000, 1000, 20, 20);
 	}
 
 	_makeCamera() {

@@ -12,4 +12,12 @@ GitHub: [https://github.com/kenjiSpecial/tubugl-tubugl-helper](https://github.co
 
 [codes](https://github.com/kenjiSpecial/tubugl-helper/tree/master/examples/app01) | [source for normalHleper](https://github.com/kenjiSpecial/tubugl-helper/blob/master/src/normalHelper.js)
 
+
+### [#02 - Grid Helper2](./app02/index.html)
+
+[![](./app02/thumbnail.png)](./app02/index.html)
+
+[codes](https://github.com/kenjiSpecial/tubugl-helper/tree/master/examples/app02) | [source for gridHelper2](https://github.com/kenjiSpecial/tubugl-helper/blob/master/src/gridHelper2.js)
+
+
 all examples were made with [tubugl](https://github.com/kenjiSpecial/tubugl)

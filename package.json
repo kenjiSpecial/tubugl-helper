@@ -1,6 +1,6 @@
 {
   "name": "tubugl-helper",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "helper for tubugl",
   "main": "index.js",
   "license": "MIT",
@@ -11,6 +11,9 @@
     "app01": "parcel examples/app01/index.html --no-hmr",
     "dist01": "parcel build examples/app01/index.html -d docs/app01 --public-url ./",
     "screenshot01": "node ./node/screenshot.js --dir=app01",
+    "app02": "parcel examples/app02/index.html --no-hmr",
+    "dist02": "parcel build examples/app02/index.html -d docs/app02 --public-url ./",
+    "screenshot02": "node ./node/screenshot.js --dir=app02",
     "docs": "python -m SimpleHTTPServer 8000"
   },
   "dependencies": {
@@ -18,7 +21,7 @@
     "tubugl-2d-shape": "^1.1.0",
     "tubugl-3d-shape": "^1.5.0",
     "tubugl-constants": "^1.0.3",
-    "tubugl-core": "^1.1.8",
+    "tubugl-core": "^1.1.9",
     "tubugl-math": "^1.1.9"
   },
   "devDependencies": {
