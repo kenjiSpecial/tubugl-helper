@@ -15,9 +15,9 @@ function init() {
 	});
 
 	document.body.appendChild(app.canvas);
-	document.addEventListener('mousemove', onDocumentMouseMove, false);
-	document.addEventListener('mousedown', onDocumentMouseDown, false);
-	document.addEventListener('mouseup', onDocumentMouseUp, false);
+	app.canvas.addEventListener('mousemove', onDocumentMouseMove, false);
+	app.canvas.addEventListener('mousedown', onDocumentMouseDown, false);
+	window.addEventListener('mouseup', onDocumentMouseUp, false);
 }
 
 function start() {

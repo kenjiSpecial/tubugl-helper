@@ -72,7 +72,12 @@ export class GridHelper extends Plane {
 	}
 
 	drawAxis(posX = 0, posZ) {
-		this._gl.uniform3f(this._axisProgram.getUniforms('uStartPosition').location, posX, 2, posZ);
+		this._gl.uniform3f(
+			this._axisProgram.getUniforms('uStartPosition').location,
+			posX + this.position.x,
+			2 + this.position.y,
+			posZ + this.position.z
+		);
 
 		[[1, 0, 0], [0, 1, 0], [0, 0, 1]].forEach(arr => {
 			this._gl.uniform3f(
@@ -96,6 +101,11 @@ export class GridHelper extends Plane {
 	addGui(gui) {
 		let gridHelperGui = gui.addFolder('gridHelper');
 		gridHelperGui.add(this, 'visible');
+
+		let gridHelperPositionGui = gridHelperGui.addFolder('position');
+		gridHelperPositionGui.add(this.position, 'x', -100, 100);
+		gridHelperPositionGui.add(this.position, 'y', -100, 100);
+		gridHelperPositionGui.add(this.position, 'z', -100, 100);
 	}
 
 	_makeWireframe() {
