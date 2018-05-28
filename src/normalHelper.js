@@ -1,25 +1,9 @@
-const EventEmitter = require('wolfy87-eventemitter');
-import { Program } from 'tubugl-core';
-import { VAO } from 'tubugl-core/src/vao';
-import { ArrayBuffer } from 'tubugl-core/src/arrayBuffer';
-import {
-	CULL_FACE,
-	DEPTH_TEST,
-	SRC_ALPHA,
-	ZERO,
-	BLEND,
-	POINTS,
-	ONE,
-	LINES,
-	UNSIGNED_SHORT
-} from 'tubugl-constants';
+import { Program, VAO, ArrayBuffer, IndexArrayBuffer } from 'tubugl-core';
 import { mat4 } from 'gl-matrix/src/gl-matrix';
-import { IndexArrayBuffer } from 'tubugl-core/src/indexArrayBuffer';
 import { baseVertSrc, baseFragSrc, lineVertSrc, lineFragSrc } from './shaders/normalHelper.shader';
 
-export class NormalHelper extends EventEmitter {
+export class NormalHelper  {
 	constructor(gl, shape, params = {}) {
-		super();
 
 		this.visible = true;
 
@@ -96,22 +80,22 @@ export class NormalHelper extends EventEmitter {
 		return this;
 	}
 	drawDot() {
-		this._gl.disable(CULL_FACE);
-		this._gl.enable(DEPTH_TEST);
+		this._gl.disable(this._gl.CULL_FACE);
+		this._gl.enable(this._gl.DEPTH_TEST);
 
-		this._gl.blendFunc(SRC_ALPHA, ONE);
-		this._gl.enable(BLEND);
+		this._gl.blendFunc(this._gl.SRC_ALPHA, this._gl.ONE);
+		this._gl.enable(this._gl.BLEND);
 
-		this._gl.drawArrays(POINTS, 0, this._pointNum);
+		this._gl.drawArrays(this._gl.POINTS, 0, this._pointNum);
 	}
 	drawLine() {
-		this._gl.disable(CULL_FACE);
-		this._gl.enable(DEPTH_TEST);
+		this._gl.disable(this._gl.CULL_FACE);
+		this._gl.enable(this._gl.DEPTH_TEST);
 
-		this._gl.blendFunc(SRC_ALPHA, ZERO);
-		this._gl.disable(BLEND);
+		this._gl.blendFunc(this._gl.SRC_ALPHA, this._gl.ZERO);
+		this._gl.disable(this._gl.BLEND);
 
-		this._gl.drawElements(LINES, this._lineCnt, UNSIGNED_SHORT, 0);
+		this._gl.drawElements(this._gl.LINES, this._lineCnt, this._gl.UNSIGNED_SHORT, 0);
 	}
 	addGui(gui) {
 		let normalHelperFolder = gui.addFolder('normal helper');

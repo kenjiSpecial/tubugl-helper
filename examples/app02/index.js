@@ -4,12 +4,11 @@
 
 const dat = require('../vendor/dat.gui.min');
 const TweenLite = require('gsap/TweenLite');
-const Stats = require('stats.js');
+const Stats = require('../vendor/stats.min');
 
-import { COLOR_BUFFER_BIT, DEPTH_BUFFER_BIT, DEPTH_TEST } from 'tubugl-constants';
 import { Cube } from 'tubugl-3d-shape';
 import { PerspectiveCamera } from 'tubugl-camera';
-import { GridHelper2 } from '../../index';
+import { GridHelper2 } from '../../src/index';
 
 export default class App {
 	constructor(params = {}) {
@@ -45,7 +44,7 @@ export default class App {
 		let gl = this.gl;
 		gl.viewport(0, 0, this._width, this._height);
 
-		gl.clear(COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT);
+		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		this._camera
 			.updatePosition(
 				this._camera.rad1 * Math.sin(this._camera.theta) * Math.cos(this._camera.phi),
@@ -113,10 +112,10 @@ export default class App {
 	destroy() {}
 	_setClear() {
 		this.gl.clearColor(1.0, 1.0, 1.0, 1.0);
-		this.gl.enable(DEPTH_TEST);
+		this.gl.enable(this.gl.DEPTH_TEST);
 	}
 	_makeBox() {
-		this._box = new Cube(this.gl, {}, 200, 200, 200, 4, 5, 6);
+		this._box = new Cube(this.gl, {}, 200, 200, 200, 1, 1, 1);
 		this._box.posTheta = 0;
 		this._box.rotTheta = 0;
 		this._box.position.y = 100;

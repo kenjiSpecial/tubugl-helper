@@ -4,11 +4,10 @@
 
 const dat = require('../vendor/dat.gui.min');
 const TweenLite = require('gsap/TweenLite');
-const Stats = require('stats.js');
+const Stats = require('../vendor/stats.min');
 
-import { COLOR_BUFFER_BIT, DEPTH_BUFFER_BIT, DEPTH_TEST } from 'tubugl-constants';
 import { PerspectiveCamera } from 'tubugl-camera';
-import { GridHelper, NormalHelper } from '../../index';
+import { GridHelper, NormalHelper } from '../../src/index';
 import { ProceduralRoundingCube } from 'tubugl-3d-shape';
 
 export default class App {
@@ -47,7 +46,7 @@ export default class App {
 		let gl = this.gl;
 		gl.viewport(0, 0, this._width, this._height);
 
-		gl.clear(COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT);
+		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		this._camera
 			.updatePosition(
 				this._camera.rad1 * Math.sin(this._camera.theta) * Math.cos(this._camera.phi),
@@ -116,7 +115,7 @@ export default class App {
 	destroy() {}
 	_setClear() {
 		this.gl.clearColor(0.0, 0.0, 0.0, 1.0);
-		this.gl.enable(DEPTH_TEST);
+		this.gl.enable(this.gl.DEPTH_TEST);
 	}
 	_makeBox() {
 		this._roundingCube = new ProceduralRoundingCube(this.gl, {}, 300, 300, 300, 10, 10, 10, 10);

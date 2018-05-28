@@ -1,10 +1,14 @@
 {
   "name": "tubugl-helper",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "helper for tubugl",
-  "main": "index.js",
+  "cjs": "build/tubu-helper.cjs.js",
+  "module": "build/tubu-helper.esm.js",
+  "main": "build/tubu-helper.js",
+  "libName": "Tubu",
   "license": "MIT",
   "scripts": {
+    "build": "rollup -c",
     "app00": "parcel examples/app00/index.html --no-hmr",
     "dist00": "parcel build examples/app00/index.html -d docs/app00 --public-url ./",
     "screenshot00": "node ./node/screenshot.js --dir=app00",
@@ -18,17 +22,26 @@
   },
   "dependencies": {
     "chroma-js": "^1.3.5",
-    "tubugl-2d-shape": "^1.1.0",
-    "tubugl-3d-shape": "^1.5.0",
-    "tubugl-constants": "^1.0.3",
-    "tubugl-core": "^1.1.9",
-    "tubugl-math": "^1.1.9"
+    "tubugl-2d-shape": "^1.2.0",
+    "tubugl-3d-shape": "^1.6.2",
+    "tubugl-core": "^1.5.0",
+    "tubugl-math": "^1.2.1"
   },
   "devDependencies": {
-    "gsap": "^1.20.3",
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelrc-rollup": "^3.0.0",
+    "gsap": "^1.20.4",
     "minimist": "^1.2.0",
-    "puppeteer": "^0.13.0",
-    "stats.js": "mrdoob/stats.js",
+    "parcel-bundler": "^1.8.1",
+    "parcel-plugin-glsl": "^0.1.0",
+    "puppeteer": "^1.2.0",
+    "rollup": "^0.59.4",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "tubugl-camera": "^1.3.2"
   }
 }

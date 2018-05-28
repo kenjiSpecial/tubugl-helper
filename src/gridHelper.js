@@ -1,7 +1,6 @@
 import { Plane } from 'tubugl-2d-shape';
-const chroma = require('chroma-js');
+import chroma from 'chroma-js';
 import { Program, ArrayBuffer } from 'tubugl-core';
-import { LINES } from 'tubugl-constants';
 import { mat4 } from 'gl-matrix';
 import { baseFragSrc, baseVertSrc, axisVertSrc } from './shaders/gridhelper.shader';
 
@@ -92,7 +91,7 @@ export class GridHelper extends Plane {
 				arr[1],
 				arr[2]
 			);
-			this._gl.drawArrays(LINES, 0, this._axisCnt);
+			this._gl.drawArrays(this._gl.LINES, 0, this._axisCnt);
 		});
 
 		return this;

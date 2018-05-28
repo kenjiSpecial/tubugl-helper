@@ -1,19 +1,8 @@
 import { Plane } from 'tubugl-2d-shape';
-const chroma = require('chroma-js');
+import chroma from 'chroma-js';
 import { Program, ArrayBuffer } from 'tubugl-core';
 import { baseFragSrc, baseVertSrc } from './shaders/gridhelper.shader';
-import { Vector3 } from 'tubugl-math/src/vector3';
-import { Euler } from 'tubugl-math/src/euler';
-import { IndexArrayBuffer } from 'tubugl-core/src/indexArrayBuffer';
-import {
-	SRC_ALPHA,
-	ONE,
-	BLEND,
-	CULL_FACE,
-	TRIANGLES,
-	UNSIGNED_SHORT,
-	ONE_MINUS_SRC_ALPHA
-} from 'tubugl-constants';
+import { IndexArrayBuffer } from 'tubugl-core';
 
 export class GridHelper2 {
 	constructor(
@@ -202,6 +191,7 @@ class LinePlane {
 		this._indexBuffer = new IndexArrayBuffer(this._gl, indices);
 
 		this._cnt = indices.length;
+		// console.log(this._cnt);
 	}
 
 	render(camera, modelMatrix) {
@@ -240,11 +230,11 @@ class LinePlane {
 	}
 
 	draw() {
-		this._gl.disable(CULL_FACE);
+		this._gl.disable(this._gl.CULL_FACE);
 
-		this._gl.blendFunc(SRC_ALPHA, ONE_MINUS_SRC_ALPHA);
-		this._gl.enable(BLEND);
+		this._gl.blendFunc(this._gl.SRC_ALPHA, this._gl.ONE_MINUS_SRC_ALPHA);
+		this._gl.enable(this._gl.BLEND);
 
-		this._gl.drawElements(TRIANGLES, this._cnt, UNSIGNED_SHORT, 0);
+		this._gl.drawElements(this._gl.TRIANGLES, this._cnt, this._gl.UNSIGNED_SHORT, 0);
 	}
 }
